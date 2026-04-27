@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BridgeMarketing | 美国市场营销 · US Market Experts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0D1B2A;
+  --navy-mid: #1A2E45;
+  --teal: #0D9488;
+  --teal-light: #14B8A6;
+  --teal-pale: #CCFBF1;
+  --gold: #D4A017;
+  --gold-light: #FDE68A;
+  --white: #FFFFFF;
+  --off-white: #F8F9FA;
+  --muted: #94A3B8;
+  --text: #1E293B;
+  --text-light: #64748B;
+  --border: rgba(13,148,136,0.15);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans SC', 'DM Sans', sans-serif;
+  background: var(--white);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* ─── LANGUAGE TOGGLE ─── */
+.lang-en { display: none; }
+body.en .lang-zh { display: none; }
+body.en .lang-en { display: block; }
+body.en .lang-en-inline { display: inline; }
+body.en .lang-zh-inline { display: none; }
+.lang-en-inline { display: none; }
+.lang-zh-inline { display: inline; }
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.2rem 4rem;
+  background: rgba(13,27,42,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(13,148,136,0.2);
+  transition: padding 0.3s;
+}
+nav.scrolled { padding: 0.8rem 4rem; }
+
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem; font-weight: 600;
+  color: var(--white); text-decoration: none; letter-spacing: 0.02em;
+}
+.logo span { color: var(--teal-light); }
+
+.nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  color: var(--muted); text-decoration: none; font-size: 0.85rem;
+  letter-spacing: 0.05em; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--white); }
+
+.nav-right { display: flex; align-items: center; gap: 1.2rem; }
+
+.lang-btn {
+  background: transparent; border: 1px solid rgba(13,148,136,0.4);
+  color: var(--teal-light); padding: 0.35rem 0.85rem;
+  border-radius: 20px; font-size: 0.78rem; cursor: pointer;
+  font-family: inherit; transition: all 0.2s; letter-spacing: 0.05em;
+}
+.lang-btn:hover { background: var(--teal); color: var(--white); border-color: var(--teal); }
+
+.nav-cta {
+  background: var(--teal); color: var(--white);
+  padding: 0.5rem 1.3rem; border-radius: 4px;
+  text-decoration: none; font-size: 0.82rem; font-weight: 500;
+  transition: background 0.2s; white-space: nowrap;
+}
+.nav-cta:hover { background: var(--teal-light); }
+
+/* ─── HERO ─── */
+#home {
+  min-height: 100vh;
+  background: var(--navy);
+  display: flex; align-items: center;
+  position: relative; overflow: hidden;
+  padding-top: 5rem;
+}
+
+.hero-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(13,148,136,0.08) 0%, transparent 70%),
+              radial-gradient(ellipse 40% 40% at 20% 80%, rgba(212,160,23,0.05) 0%, transparent 60%);
+}
+
+.hero-grid-lines {
+  position: absolute; inset: 0; opacity: 0.04;
+  background-image: linear-gradient(var(--teal) 1px, transparent 1px),
+                    linear-gradient(90deg, var(--teal) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+.hero-content {
+  position: relative; z-index: 2;
+  max-width: 1200px; margin: 0 auto; padding: 6rem 4rem;
+  display: grid; grid-template-columns: 1fr 420px; gap: 5rem; align-items: center;
+}
+
+.hero-eyebrow {
+  font-size: 0.78rem; letter-spacing: 0.2em; color: var(--teal-light);
+  text-transform: uppercase; margin-bottom: 1.5rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.hero-eyebrow::before {
+  content: ''; width: 2rem; height: 1px; background: var(--teal-light);
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 600; line-height: 1.15;
+  color: var(--white); margin-bottom: 1.5rem;
+}
+.hero-title em { color: var(--teal-light); font-style: normal; }
+
+.hero-sub {
+  font-size: 1.05rem; color: var(--muted); line-height: 1.8;
+  margin-bottom: 2.5rem; max-width: 520px;
+}
+
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.btn-primary {
+  background: var(--teal); color: var(--white);
+  padding: 0.85rem 2rem; border-radius: 4px;
+  text-decoration: none; font-size: 0.9rem; font-weight: 500;
+  transition: all 0.2s; display: inline-block;
+}
+.btn-primary:hover { background: var(--teal-light); transform: translateY(-1px); }
+
+.btn-outline {
+  border: 1px solid rgba(255,255,255,0.25); color: var(--white);
+  padding: 0.85rem 2rem; border-radius: 4px;
+  text-decoration: none; font-size: 0.9rem;
+  transition: all 0.2s; display: inline-block;
+}
+.btn-outline:hover { border-color: var(--teal-light); color: var(--teal-light); }
+
+.hero-stats {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(13,148,136,0.2);
+  border-radius: 12px; padding: 2rem;
+  display: flex; flex-direction: column; gap: 1.5rem;
+}
+
+.stat-item { }
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem; font-weight: 600; color: var(--teal-light);
+  line-height: 1;
+}
+.stat-label { font-size: 0.82rem; color: var(--muted); margin-top: 0.3rem; }
+
+.stat-divider { height: 1px; background: rgba(255,255,255,0.07); }
+
+/* ─── SECTION BASE ─── */
+section { padding: 6rem 4rem; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+
+.section-eyebrow {
+  font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 0.75rem;
+  display: flex; align-items: center; gap: 0.6rem;
+}
+.section-eyebrow::before { content: ''; width: 1.5rem; height: 1px; background: var(--teal); }
+
+.section-title {
+  font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 600; color: var(--navy); line-height: 1.2; margin-bottom: 1rem;
+}
+
+.section-sub {
+  font-size: 1rem; color: var(--text-light); line-height: 1.8; max-width: 560px;
+}
+
+/* ─── WHY US ─── */
+#why { background: var(--navy); }
+#why .section-title { color: var(--white); }
+#why .section-sub { color: var(--muted); }
+
+.why-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+.why-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(13,148,136,0.2);
+  border-radius: 12px; padding: 2rem;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.why-card:hover { border-color: var(--teal); transform: translateY(-4px); }
+
+.why-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem; font-weight: 600; line-height: 1;
+  margin-bottom: 1rem;
+}
+.why-card:nth-child(1) .why-num { color: var(--teal-light); }
+.why-card:nth-child(2) .why-num { color: var(--gold); }
+.why-card:nth-child(3) .why-num { color: #E87C6B; }
+
+.why-title { font-size: 1.3rem; font-weight: 600; color: var(--white); margin-bottom: 0.5rem; }
+.why-tag { font-size: 0.78rem; color: var(--teal-light); margin-bottom: 1rem; letter-spacing: 0.05em; }
+.why-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.8; }
+
+/* ─── SERVICES ─── */
+#services { background: var(--off-white); }
+
+.services-grid { margin-top: 3.5rem; display: flex; flex-direction: column; gap: 2rem; }
+
+.service-block {
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.07);
+  border-radius: 16px; overflow: hidden;
+  display: grid; grid-template-columns: 280px 1fr;
+  transition: box-shadow 0.3s;
+}
+.service-block:hover { box-shadow: 0 8px 40px rgba(13,148,136,0.1); }
+
+.service-left {
+  padding: 2.5rem 2rem;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.service-left.teal { background: var(--teal); }
+.service-left.navy { background: var(--navy); }
+.service-left.gold-bg { background: #1A2E45; border-right: 3px solid var(--gold); }
+
+.service-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem; font-weight: 600; color: rgba(255,255,255,0.15); line-height: 1;
+}
+.service-name { font-family: 'Noto Serif SC', serif; font-size: 1.4rem; font-weight: 600; color: var(--white); margin-bottom: 0.4rem; }
+.service-name-en { font-size: 0.78rem; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; text-transform: uppercase; }
+
+.service-right { padding: 2.5rem 2.5rem; }
+
+.service-items {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.service-item { }
+.service-item-title {
+  font-size: 0.95rem; font-weight: 500; color: var(--navy);
+  margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.5rem;
+}
+.service-item-title::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--teal); flex-shrink: 0;
+}
+.service-item-desc { font-size: 0.83rem; color: var(--text-light); line-height: 1.7; }
+
+.service-note {
+  margin-top: 1.5rem; padding: 0.85rem 1rem;
+  background: rgba(13,148,136,0.06); border-left: 3px solid var(--teal);
+  border-radius: 0 6px 6px 0; font-size: 0.83rem; color: var(--text-light); line-height: 1.6;
+}
+
+/* Social media tags */
+.platform-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+.platform-tag {
+  padding: 0.3rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 500;
+}
+.tag-linkedin { background: #EFF6FF; color: #1D4ED8; }
+.tag-instagram { background: #FDF2F8; color: #9D174D; }
+.tag-tiktok { background: #F0FDF4; color: #065F46; }
+.tag-x { background: #F8FAFC; color: #0F172A; border: 1px solid #E2E8F0; }
+
+/* ─── PROCESS ─── */
+#process { background: var(--white); }
+
+.process-steps {
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 0;
+  margin-top: 3.5rem; position: relative;
+}
+.process-steps::after {
+  content: ''; position: absolute;
+  top: 2.2rem; left: 12%; right: 12%; height: 1px;
+  background: linear-gradient(90deg, var(--teal) 0%, var(--gold) 100%);
+  z-index: 0;
+}
+
+.step { text-align: center; position: relative; z-index: 1; padding: 0 1rem; }
+.step-icon {
+  width: 4.5rem; height: 4.5rem; border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem; font-weight: 600;
+  background: var(--white); border: 2px solid var(--teal); color: var(--teal);
+  position: relative; z-index: 2;
+}
+.step:nth-child(2) .step-icon { border-color: var(--teal-light); color: var(--teal-light); }
+.step:nth-child(3) .step-icon { border-color: var(--gold); color: var(--gold); }
+.step:nth-child(4) .step-icon { border-color: #E87C6B; color: #E87C6B; }
+
+.step-title { font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.5rem; }
+.step-desc { font-size: 0.82rem; color: var(--text-light); line-height: 1.7; }
+
+/* ─── CONTACT ─── */
+#contact { background: var(--navy); }
+#contact .section-title { color: var(--white); }
+#contact .section-sub { color: var(--muted); }
+
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+  margin-top: 3.5rem; align-items: start;
+}
+
+.contact-info { }
+.contact-item {
+  display: flex; align-items: flex-start; gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.contact-icon {
+  width: 2.5rem; height: 2.5rem; border-radius: 8px;
+  background: rgba(13,148,136,0.15); display: flex;
+  align-items: center; justify-content: center;
+  font-size: 1.1rem; flex-shrink: 0;
+}
+.contact-label { font-size: 0.75rem; color: var(--teal-light); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.2rem; }
+.contact-value { font-size: 0.95rem; color: var(--white); }
+
+.contact-form { }
+.form-group { margin-bottom: 1.2rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+label { display: block; font-size: 0.78rem; color: var(--muted); margin-bottom: 0.4rem; letter-spacing: 0.05em; }
+
+input, textarea, select {
+  width: 100%; padding: 0.85rem 1rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px; color: var(--white); font-size: 0.9rem;
+  font-family: inherit; transition: border-color 0.2s; outline: none;
+}
+input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.3); }
+input:focus, textarea:focus, select:focus { border-color: var(--teal); }
+select option { background: var(--navy); }
+textarea { resize: vertical; min-height: 120px; }
+
+.form-submit {
+  width: 100%; padding: 1rem;
+  background: var(--teal); color: var(--white);
+  border: none; border-radius: 6px; font-size: 0.95rem; font-weight: 500;
+  cursor: pointer; font-family: inherit; transition: background 0.2s;
+}
+.form-submit:hover { background: var(--teal-light); }
+
+/* ─── FOOTER ─── */
+footer {
+  background: #070F1A;
+  padding: 2.5rem 4rem;
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 1px solid rgba(13,148,136,0.15);
+}
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem; color: var(--white);
+}
+.footer-logo span { color: var(--teal-light); }
+.footer-copy { font-size: 0.78rem; color: var(--muted); }
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--teal-light); }
+
+/* ─── MOBILE NAV ─── */
+.hamburger { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--white); margin: 4px 0; transition: all 0.3s; }
+
+/* ─── ANIMATIONS ─── */
+.fade-up {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+.fade-up:nth-child(2) { transition-delay: 0.1s; }
+.fade-up:nth-child(3) { transition-delay: 0.2s; }
+.fade-up:nth-child(4) { transition-delay: 0.3s; }
+
+/* ─── MOBILE ─── */
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .hamburger { display: block; }
+
+  .hero-content { grid-template-columns: 1fr; padding: 3rem 1.5rem; gap: 2.5rem; }
+  .hero-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
+  .stat-divider { display: none; }
+
+  section { padding: 4rem 1.5rem; }
+  .why-grid { grid-template-columns: 1fr; }
+  .service-block { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr 1fr; }
+  .process-steps::after { display: none; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+  footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+  .form-row { grid-template-columns: 1fr; }
+}
+/* ─── TEAM ─── */
+#team { background: var(--off-white); }
+
+.team-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem;
+  margin-top: 3.5rem;
+}
+
+.team-card {
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.07);
+  border-radius: 20px; overflow: hidden;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.team-card:hover { box-shadow: 0 12px 48px rgba(13,148,136,0.12); transform: translateY(-4px); }
+
+.team-card-top {
+  padding: 2.5rem 2.5rem 1.5rem;
+  display: flex; align-items: flex-start; gap: 1.5rem;
+}
+
+.team-avatar {
+  width: 72px; height: 72px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem; font-weight: 600; color: var(--white);
+}
+.avatar-di { background: linear-gradient(135deg, var(--navy), var(--teal)); }
+.avatar-christina { background: linear-gradient(135deg, #9D174D, #E87C6B); }
+
+.team-meta { flex: 1; }
+.team-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem; font-weight: 600; color: var(--navy); line-height: 1.1;
+}
+.team-role {
+  font-size: 0.8rem; color: var(--teal); letter-spacing: 0.1em;
+  text-transform: uppercase; margin-top: 0.3rem;
+}
+
+.team-card-body { padding: 0 2.5rem 2rem; }
+
+.team-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.2rem; }
+.team-tag {
+  padding: 0.28rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 500;
+  background: var(--off-white); color: var(--text-light);
+  border: 1px solid rgba(0,0,0,0.08);
+}
+.team-tag.highlight { background: rgba(13,148,136,0.08); color: var(--teal); border-color: rgba(13,148,136,0.2); }
+.team-tag.highlight-pink { background: rgba(157,23,77,0.06); color: #9D174D; border-color: rgba(157,23,77,0.15); }
+
+.team-bio { font-size: 0.9rem; color: var(--text-light); line-height: 1.8; }
+
+.team-divider { height: 1px; background: rgba(0,0,0,0.06); margin: 1.2rem 0; }
+
+.team-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem; color: var(--navy); line-height: 1.7;
+  font-style: italic; padding-left: 1rem;
+  border-left: 3px solid var(--teal);
+}
+.team-card:nth-child(2) .team-quote { border-left-color: #E87C6B; }
+
+@media (max-width: 900px) {
+  .team-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#home" class="logo">Bridge<span>Marketing</span></a>
+  <ul class="nav-links">
+    <li><a href="#why">
+      <span class="lang-zh-inline">为什么选我们</span>
+      <span class="lang-en-inline">Why Us</span>
+    </a></li>
+    <li><a href="#services">
+      <span class="lang-zh-inline">服务</span>
+      <span class="lang-en-inline">Services</span>
+    </a></li>
+    <li><a href="#secret">
+      <span class="lang-zh-inline">独家优势</span>
+      <span class="lang-en-inline">Secret Sauce</span>
+    </a></li>
+    <li><a href="#team">
+      <span class="lang-zh-inline">团队</span>
+      <span class="lang-en-inline">Team</span>
+    </a></li>
+    <li><a href="#process">
+      <span class="lang-zh-inline">合作流程</span>
+      <span class="lang-en-inline">Process</span>
+    </a></li>
+    <li><a href="#contact">
+      <span class="lang-zh-inline">联系我们</span>
+      <span class="lang-en-inline">Contact</span>
+    </a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="lang-btn" id="langToggle">EN / 中文</button>
+    <a href="#contact" class="nav-cta">
+      <span class="lang-zh-inline">免费咨询</span>
+      <span class="lang-en-inline">Free Consult</span>
+    </a>
+    <button class="hamburger" aria-label="menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-eyebrow">
+        <span class="lang-zh">专为中国制造企业 · For Chinese Manufacturers</span>
+        <span class="lang-en">Bridging China's Factories to the US Market</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="lang-zh">让美国市场<br><em>信任你</em></span>
+        <span class="lang-en">Make the US Market<br><em>Trust You</em></span>
+      </h1>
+      <p class="hero-sub">
+        <span class="lang-zh">中国制造有实力，美国市场有回报。10年深耕美国，我们掌握只有本土公司才拥有的数据与玩法——帮工厂把外贸变内贸，用信任换利润。</span>
+        <span class="lang-en">Chinese manufacturing has the power. The US market has the returns. 10 years deep in America — we hold the insider data and playbooks only local companies have. Turn your export into a domestic-grade brand.</span>
+      </p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">
+          <span class="lang-zh-inline">预约免费咨询</span>
+          <span class="lang-en-inline">Book a Free Consult</span>
+        </a>
+        <a href="#services" class="btn-outline">
+          <span class="lang-zh-inline">了解服务</span>
+          <span class="lang-en-inline">View Services</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">10年</div>
+        <div class="stat-label">
+          <span class="lang-zh-inline">美国营销机构实战经验</span>
+          <span class="lang-en-inline">US Marketing Agency Experience</span>
+        </div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">5年</div>
+        <div class="stat-label">
+          <span class="lang-zh-inline">中国制造出海咨询</span>
+          <span class="lang-en-inline">China Manufacturing Consulting</span>
+        </div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">0→1</div>
+        <div class="stat-label">
+          <span class="lang-zh-inline">从零建立美国品牌</span>
+          <span class="lang-en-inline">Build US Brand from Scratch</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="section-inner">
+    <div class="section-eyebrow">
+      <span class="lang-zh-inline">为什么是我们</span>
+      <span class="lang-en-inline">Why Choose Us</span>
+    </div>
+    <h2 class="section-title">
+      <span class="lang-zh">实力 · 压力 · 动力 · 利润</span>
+      <span class="lang-en">Strength. Urgency. Drive. And Real Returns.</span>
+    </h2>
+    <p class="section-sub">
+      <span class="lang-zh">赢得美国市场的信任，是最难的一步，也是利润最高的一步。我们就是帮你走这步的人。</span>
+      <span class="lang-en">Earning trust in the US market is the hardest step — and the highest-margin one. We're here to help you take it.</span>
+    </p>
+    <div class="why-grid">
+      <div class="why-card fade-up">
+        <div class="why-num">01</div>
+        <div class="why-title">
+          <span class="lang-zh-inline">有实力</span>
+          <span class="lang-en-inline">The Strength</span>
+        </div>
+        <div class="why-tag">
+          <span class="lang-zh-inline">中国制造业，全球供应链的脊梁</span>
+          <span class="lang-en-inline">China Manufacturing — The World's Backbone</span>
+        </div>
+        <p class="why-desc">
+          <span class="lang-zh">中国制造业具备无与伦比的产能、成本与技术优势。这是进入美国市场最强大的底气——缺的从来不是产品，而是让美国人信任你的方式。</span>
+          <span class="lang-en">Chinese manufacturers have unmatched capacity, cost efficiency, and technical depth. The product is never the problem — building American trust around it is.</span>
+        </p>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-num">02</div>
+        <div class="why-title">
+          <span class="lang-zh-inline">有压力</span>
+          <span class="lang-en-inline">The Urgency</span>
+        </div>
+        <div class="why-tag">
+          <span class="lang-zh-inline">外贸的窗口期，正在收窄</span>
+          <span class="lang-en-inline">The Window Is Closing</span>
+        </div>
+        <p class="why-desc">
+          <span class="lang-zh">关税调整、供应链重构、平台规则收紧——依赖中间商和平台的时代正在结束。直接建立美国品牌，是下一个10年的必选项。</span>
+          <span class="lang-en">Tariff changes, supply chain shifts, and tightening platform rules signal the end of middleman-dependent exports. Building a direct US brand is the only 10-year bet.</span>
+        </p>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-num">03</div>
+        <div class="why-title">
+          <span class="lang-zh-inline">有动力</span>
+          <span class="lang-en-inline">The Incentive</span>
+        </div>
+        <div class="why-tag">
+          <span class="lang-zh-inline">赢得信任 = 赢得利润</span>
+          <span class="lang-en-inline">Trust Earned = Margin Unlocked</span>
+        </div>
+        <p class="why-desc">
+          <span class="lang-zh">美国市场的逻辑是：信任，是最高的门槛，也是最丰厚的护城河。一旦建立品牌信任，利润率与复购率都远超纯外贸模式，投入有极高的长期回报。</span>
+          <span class="lang-en">In the US, trust is the highest barrier — and the widest moat. Brands with genuine trust command higher margins, stronger loyalty, and far better long-term ROI than pure export plays.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-eyebrow">
+      <span class="lang-zh-inline">服务内容</span>
+      <span class="lang-en-inline">Our Services</span>
+    </div>
+    <h2 class="section-title">
+      <span class="lang-zh">我们能为您做什么</span>
+      <span class="lang-en">What We Do For You</span>
+    </h2>
+    <p class="section-sub">
+      <span class="lang-zh">三大核心服务，覆盖从内容生产到品牌曝光的完整链路。</span>
+      <span class="lang-en">Three core services covering the full pipeline from content creation to brand visibility.</span>
+    </p>
+
+    <div class="services-grid">
+      <!-- Service 1: Content -->
+      <div class="service-block fade-up">
+        <div class="service-left teal">
+          <div class="service-num">01</div>
+          <div>
+            <div class="service-name">
+              <span class="lang-zh-inline">内容制作</span>
+              <span class="lang-en-inline">Content Production</span>
+            </div>
+            <div class="service-name-en">
+              <span class="lang-zh-inline">Content Production</span>
+              <span class="lang-en-inline">视频 · 摄影</span>
+            </div>
+          </div>
+        </div>
+        <div class="service-right">
+          <div class="service-items">
+            <div class="service-item">
+              <div class="service-item-title">
+                <span class="lang-zh-inline">本土化视觉内容</span>
+                <span class="lang-en-inline">Localized Visual Content</span>
+              </div>
+              <p class="service-item-desc">
+                <span class="lang-zh">不只是翻译，而是重新设计。从构图、色调到文案，让你的内容在美国人看来是"自己人做的"，而不是"翻译过来的"。</span>
+                <span class="lang-en">Not translation — transformation. Composition, tone, copy — all rebuilt so your content feels native, not imported.</span>
+              </p>
+            </div>
+            <div class="service-item">
+              <div class="service-item-title">
+                <span class="lang-zh-inline">美国场景 · 美国面孔</span>
+                <span class="lang-en-inline">American Scenes, American Faces</span>
+              </div>
+              <p class="service-item-desc">
+                <span class="lang-zh">产品放入真实的美国生活场景，由真正的美国人出镜——母语表达，本土背景，让买家第一眼就产生代入感。</span>
+                <span class="lang-en">Your product in real American settings, with real Americans on screen. Native language, familiar environments — instant relatability for US buyers.</span>
+              </p>
+            </div>
+            <div class="service-item">
+              <div class="service-item-title">
+                <span class="lang-zh-inline">建立信任的内容策略</span>
+                <span class="lang-en-inline">Content Built Around Trust</span>
+              </div>
+              <p class="service-item-desc">
+                <span class="lang-zh">我们不只做好看的内容，我们做能建立信任、推动决策的内容。每一个画面、每一句话，都经过美国市场视角的打磨。</span>
+                <span class="lang-en">We don't just make content that looks good. We make content that builds trust and moves decisions — every frame, every line, shaped by a US market lens.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 2: Social -->
+      <div class="service-block fade-up">
+        <div class="service-left navy">
+          <div class="service-num">02</div>
+          <div>
+            <div class="service-name">
+              <span class="lang-zh-inline">社交媒体运营</span>
+              <span class="lang-en-inline">Social Media</span>
+            </div>
+            <div class="service-name-en">
+              <span class="lang-zh-inline">Social Media Management</span>
+              <span class="lang-en-inline">社媒管理</span>
+            </div>
+          </div>
+        </div>
+        <div class="service-right">
+          <div class="service-items">
+            <div class="service-item">
+              <div class="service-item-title">LinkedIn</div>
+              <p class="service-item-desc">
+                <span class="lang-zh">触达美国B2B采购决策者，建立企业专业形象。</span>
+                <span class="lang-en">Reach US B2B decision-makers and build professional brand authority.</span>
+              </p>
+              <div class="platform-tags"><span class="platform-tag tag-linkedin">B2B 核心</span></div>
+            </div>
+            <div class="service-item">
+              <div class="service-item-title">Instagram</div>
+              <p class="service-item-desc">
+                <span class="lang-zh">高质量视觉内容，吸引品牌买家与零售渠道。</span>
+                <span class="lang-en">Visual storytelling that attracts brand buyers and retail channels.</span>
+              </p>
+              <div class="platform-tags"><span class="platform-tag tag-instagram">视觉营销</span></div>
+            </div>
+            <div class="service-item">
+              <div class="service-item-title">TikTok &amp; X</div>
+              <p class="service-item-desc">
+                <span class="lang-zh">扩大品牌触达，快速建立美国市场认知度。</span>
+                <span class="lang-en">Expand reach and quickly build brand awareness in the US market.</span>
+              </p>
+              <div class="platform-tags">
+                <span class="platform-tag tag-tiktok">内容扩散</span>
+                <span class="platform-tag tag-x">行业声量</span>
+              </div>
+            </div>
+          </div>
+          <div class="service-note">
+            <span class="lang-zh">注：Facebook由中国团队已有成熟运营，网红营销沟通周期较长，以上为优先推荐平台。</span>
+            <span class="lang-en">Note: Facebook is typically handled by in-house Chinese teams. Influencer marketing involves long lead times. The above are our priority platforms.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 3: Exhibition -->
+      <div class="service-block fade-up">
+        <div class="service-left gold-bg">
+          <div class="service-num">03</div>
+          <div>
+            <div class="service-name">
+              <span class="lang-zh-inline">展会营销支持</span>
+              <span class="lang-en-inline">Trade Show Support</span>
+            </div>
+            <div class="service-name-en">
+              <span class="lang-zh-inline">Trade Show Support</span>
+              <span class="lang-en-inline">展会全程支持</span>
+            </div>
+          </div>
+        </div>
+        <div class="service-right">
+          <div class="service-items">
+            <div class="service-item">
+              <div class="service-item-title">
+                <span class="lang-zh-inline">展前准备</span>
+                <span class="lang-en-inline">Pre-Show Prep</span>
+              </div>
+              <p class="service-item-desc">
+                <span class="lang-zh">品牌物料设计、印刷支持，展前内容预热。</span>
+                <span class="lang-en">Brand material design, print support, and pre-show content warm-up.</span>
+              </p>
+            </div>
+            <div class="service-item">
+              <div class="service-item-title">
+                <span class="lang-zh-inline">现场执行</span>
+                <span class="lang-en-inline">On-Site Execution</span>
+              </div>
+              <p class="service-item-desc">
+                <span class="lang-zh">专业摄影摄像、客户接待配合、现场互动内容。</span>
+                <span class="lang-en">Professional photo/video, client hospitality support, and live content creation.</span>
+              </p>
+            </div>
+            <div class="service-item">
+              <div class="service-item-title">
+                <span class="lang-zh-inline">展后延续</span>
+                <span class="lang-en-inline">Post-Show Follow-Through</span>
+              </div>
+              <p class="service-item-desc">
+                <span class="lang-zh">精彩内容剪辑发布，延长展会曝光周期，协助销售跟进。</span>
+                <span class="lang-en">Highlight reels, content distribution, and sales follow-up support.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECRET SAUCE -->
+<section id="secret" style="background: var(--navy); padding: 6rem 4rem;">
+  <div class="section-inner">
+    <div class="section-eyebrow" style="color: var(--gold);">
+      <span style="width:1.5rem; height:1px; background:var(--gold); display:inline-block; vertical-align:middle; margin-right:0.6rem;"></span>
+      <span class="lang-zh-inline">我们的独家优势</span>
+      <span class="lang-en-inline">Our Secret Sauce</span>
+    </div>
+    <h2 class="section-title" style="color: var(--white);">
+      <span class="lang-zh">出海到美国<br>其实是<em style="color:var(--teal-light); font-style:normal;">外贸变内贸</em></span>
+      <span class="lang-en">Going to the US<br>Means Playing <em style="color:var(--teal-light); font-style:normal;">By Insider Rules</em></span>
+    </h2>
+    <p class="section-sub" style="color: var(--muted); margin-bottom: 3rem;">
+      <span class="lang-zh">大多数出海服务商，是站在中国看美国。我们不同——我们在美国工作生活了10年，掌握的是只有美国本土公司才能使用的资源、数据与渠道。</span>
+      <span class="lang-en">Most export consultants look at the US from the outside. We've lived and worked inside it for 10 years — with access to data, tools, and networks that only US-based companies can tap.</span>
+    </p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+
+      <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(212,160,23,0.25); border-radius: 12px; padding: 2rem;">
+        <div style="font-size: 1.8rem; margin-bottom: 1rem;">🔑</div>
+        <div style="font-size: 1rem; font-weight: 600; color: var(--gold); margin-bottom: 0.5rem;">
+          <span class="lang-zh-inline">美国专属数据与工具</span>
+          <span class="lang-en-inline">US-Only Data & Tools</span>
+        </div>
+        <p style="font-size: 0.88rem; color: var(--muted); line-height: 1.8;">
+          <span class="lang-zh">许多美国本土市场数据库、消费者行为工具与广告资源，需要美国公司身份才能访问。我们帮您直接用上这些"内部资源"，绕过信息差。</span>
+          <span class="lang-en">Many US consumer databases, market research tools, and ad platforms require a US company identity to access. We bring these insider resources directly to your strategy.</span>
+        </p>
+      </div>
+
+      <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(20,184,166,0.25); border-radius: 12px; padding: 2rem;">
+        <div style="font-size: 1.8rem; margin-bottom: 1rem;">🧠</div>
+        <div style="font-size: 1rem; font-weight: 600; color: var(--teal-light); margin-bottom: 0.5rem;">
+          <span class="lang-zh-inline">几十年市场沉淀的玩法</span>
+          <span class="lang-en-inline">Decades of Market Know-How</span>
+        </div>
+        <p style="font-size: 0.88rem; color: var(--muted); line-height: 1.8;">
+          <span class="lang-zh">美国消费者建立信任的方式、B2B采购的决策逻辑、哪些内容会触发购买——这些是几十年市场积累出来的规律，不是靠翻译说明书能学来的。</span>
+          <span class="lang-en">How Americans build trust, how B2B buyers decide, what content triggers action — these patterns come from decades of market depth that no translation manual can teach.</span>
+        </p>
+      </div>
+
+      <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(232,124,107,0.25); border-radius: 12px; padding: 2rem;">
+        <div style="font-size: 1.8rem; margin-bottom: 1rem;">🔄</div>
+        <div style="font-size: 1rem; font-weight: 600; color: #E87C6B; margin-bottom: 0.5rem;">
+          <span class="lang-zh-inline">把外贸逻辑，换成内贸玩法</span>
+          <span class="lang-en-inline">From Export Logic to Domestic Playbook</span>
+        </div>
+        <p style="font-size: 0.88rem; color: var(--muted); line-height: 1.8;">
+          <span class="lang-zh">出海到美国，竞争对手不再是中国工厂，而是美国本土品牌。我们帮你用美国品牌的思维和打法重新定义你的产品，让你不再是"外国制造商"，而是美国市场里的一员。</span>
+          <span class="lang-en">Once you're in the US, your competitors aren't other Chinese factories — they're American brands. We help you think, position, and operate like one of them.</span>
+        </p>
+      </div>
+
+    </div>
+
+    <div style="margin-top: 2.5rem; padding: 1.75rem 2rem; background: rgba(13,148,136,0.08); border-left: 3px solid var(--teal); border-radius: 0 10px 10px 0;">
+      <p style="font-size: 1rem; color: var(--white); font-style: italic; line-height: 1.8; font-family: 'Cormorant Garamond', serif;">
+        <span class="lang-zh">"大多数中国工厂出海，是把美国市场当成另一个外贸订单。真正赚钱的方式，是把它当成一个你要在里面长期经营的本地市场。"</span>
+        <span class="lang-en">"Most Chinese factories treat the US like another export order. The real money comes from treating it like a local market you're building a permanent presence in."</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="section-inner">
+    <div class="section-eyebrow">
+      <span class="lang-zh-inline">我们的团队</span>
+      <span class="lang-en-inline">The Team</span>
+    </div>
+    <h2 class="section-title">
+      <span class="lang-zh">一个中美之间的<em style="color:var(--teal);font-style:normal;">桥梁团队</em></span>
+      <span class="lang-en">A Team Built <em style="color:var(--teal);font-style:normal;">Across Both Worlds</em></span>
+    </h2>
+    <p class="section-sub">
+      <span class="lang-zh">我们之所以不同，是因为我们本身就是中美两个世界的产物。不是咨询顾问，是真正在两边都生活过、工作过的人。</span>
+      <span class="lang-en">What makes us different is what we are — people who've genuinely lived and worked on both sides. Not consultants. Insiders.</span>
+    </p>
+
+    <div class="team-grid">
+
+      <!-- Di -->
+      <div class="team-card fade-up">
+        <div class="team-card-top">
+          <div class="team-avatar avatar-di">Di</div>
+          <div class="team-meta">
+            <div class="team-name">Di</div>
+            <div class="team-role">
+              <span class="lang-zh-inline">数据策略 · 中国桥梁</span>
+              <span class="lang-en-inline">Data Strategy · China Bridge</span>
+            </div>
+          </div>
+        </div>
+        <div class="team-card-body">
+          <div class="team-tags">
+            <span class="team-tag highlight">
+              <span class="lang-zh-inline">美国10年营销经验</span>
+              <span class="lang-en-inline">10yr US Marketing</span>
+            </span>
+            <span class="team-tag">
+              <span class="lang-zh-inline">985/211本科</span>
+              <span class="lang-en-inline">Top Chinese University</span>
+            </span>
+            <span class="team-tag">
+              <span class="lang-zh-inline">美国硕士</span>
+              <span class="lang-en-inline">US Master's Degree</span>
+            </span>
+            <span class="team-tag highlight">
+              <span class="lang-zh-inline">数据驱动营销</span>
+              <span class="lang-en-inline">Data-Led Marketing</span>
+            </span>
+          </div>
+          <p class="team-bio">
+            <span class="lang-zh">生于中国，国内顶尖高校本科毕业后赴美深造，随后在美国营销机构扎根十年。深度掌握美国市场数据工具与消费者洞察，同时对中国制造业的逻辑与语言有天然的理解。她是我们策略的核心，也是中美之间最重要的那座桥。</span>
+            <span class="lang-en">Born and raised in China, educated at one of China's top universities before earning a US graduate degree. Ten years building her career inside American marketing agencies, leading data strategy and consumer insights. She understands both worlds from the inside — and knows exactly where they connect.</span>
+          </p>
+          <div class="team-divider"></div>
+          <p class="team-quote">
+            <span class="lang-zh">"在美国工作的十年，我学到的最重要一件事是：数据不说谎，但你要先知道问哪个问题。"</span>
+            <span class="lang-en">"The most important thing I learned in ten years in the US: data doesn't lie — but you have to know which question to ask first."</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Christina -->
+      <div class="team-card fade-up">
+        <div class="team-card-top">
+          <div class="team-avatar avatar-christina">C</div>
+          <div class="team-meta">
+            <div class="team-name">Christina</div>
+            <div class="team-role">
+              <span class="lang-zh-inline">内容创作 · 美国本土</span>
+              <span class="lang-en-inline">Content & Creative · Born American</span>
+            </div>
+          </div>
+        </div>
+        <div class="team-card-body">
+          <div class="team-tags">
+            <span class="team-tag highlight-pink">
+              <span class="lang-zh-inline">Burbank 土生土长</span>
+              <span class="lang-en-inline">Born & Raised in Burbank</span>
+            </span>
+            <span class="team-tag highlight">
+              <span class="lang-zh-inline">美国10年营销经验</span>
+              <span class="lang-en-inline">10yr US Marketing</span>
+            </span>
+            <span class="team-tag highlight-pink">
+              <span class="lang-zh-inline">模特 · 演员</span>
+              <span class="lang-en-inline">Model · Actor</span>
+            </span>
+            <span class="team-tag">
+              <span class="lang-zh-inline">内容创作者</span>
+              <span class="lang-en-inline">Content Creator</span>
+            </span>
+          </div>
+          <p class="team-bio">
+            <span class="lang-zh">土生土长的 Burbank 人，在好莱坞的后院长大。十年美国营销经验，同时是模特、演员与内容创作者。她不需要"研究"美国消费者——她就是美国消费者。她让我们的内容不只是"正确"，而是真实、有温度、有感染力。</span>
+            <span class="lang-en">Born and raised in Burbank, CA — in the backyard of Hollywood. Ten years in US marketing, with a parallel career as a model, actor, and content creator. She doesn't research American consumers — she is one. Her presence turns our content from technically correct into genuinely compelling.</span>
+          </p>
+          <div class="team-divider"></div>
+          <p class="team-quote">
+            <span class="lang-zh">"美国消费者能立刻感知内容是不是'为他们做的'。那种感觉不能靠翻译——只能靠真正理解他们的人来创作。"</span>
+            <span class="lang-en">"American consumers can instantly feel whether content was made for them. That feeling can't be translated — it has to be created by someone who genuinely gets them."</span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-inner">
+    <div class="section-eyebrow">
+      <span class="lang-zh-inline">合作流程</span>
+      <span class="lang-en-inline">How It Works</span>
+    </div>
+    <h2 class="section-title">
+      <span class="lang-zh">四步开启出海之旅</span>
+      <span class="lang-en">Four Steps to Your US Presence</span>
+    </h2>
+    <div class="process-steps">
+      <div class="step fade-up">
+        <div class="step-icon">01</div>
+        <div class="step-title">
+          <span class="lang-zh-inline">免费咨询</span>
+          <span class="lang-en-inline">Free Consult</span>
+        </div>
+        <p class="step-desc">
+          <span class="lang-zh">了解您的产品、目标市场与出海需求，评估最优策略。</span>
+          <span class="lang-en">We learn your product, goals, and export needs to map the best strategy.</span>
+        </p>
+      </div>
+      <div class="step fade-up">
+        <div class="step-icon">02</div>
+        <div class="step-title">
+          <span class="lang-zh-inline">定制方案</span>
+          <span class="lang-en-inline">Custom Plan</span>
+        </div>
+        <p class="step-desc">
+          <span class="lang-zh">根据您的行业、产品与预算，量身制定营销执行方案。</span>
+          <span class="lang-en">A tailored marketing plan based on your industry, products, and budget.</span>
+        </p>
+      </div>
+      <div class="step fade-up">
+        <div class="step-icon">03</div>
+        <div class="step-title">
+          <span class="lang-zh-inline">执行落地</span>
+          <span class="lang-en-inline">Execute</span>
+        </div>
+        <p class="step-desc">
+          <span class="lang-zh">内容制作、社媒运营、展会支持全面启动，中英双语团队协作。</span>
+          <span class="lang-en">Content, social, and trade show support go live — bilingual team in action.</span>
+        </p>
+      </div>
+      <div class="step fade-up">
+        <div class="step-icon">04</div>
+        <div class="step-title">
+          <span class="lang-zh-inline">持续优化</span>
+          <span class="lang-en-inline">Optimize</span>
+        </div>
+        <p class="step-desc">
+          <span class="lang-zh">数据驱动复盘，持续迭代内容策略，提升获客效果。</span>
+          <span class="lang-en">Data-driven reviews and continuous content strategy refinement for better results.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-eyebrow">
+      <span class="lang-zh-inline">联系我们</span>
+      <span class="lang-en-inline">Get In Touch</span>
+    </div>
+    <h2 class="section-title">
+      <span class="lang-zh">预约免费咨询</span>
+      <span class="lang-en">Book a Free Consultation</span>
+    </h2>
+    <p class="section-sub">
+      <span class="lang-zh">告诉我们您的产品与目标，我们会在24小时内联系您，提供专属出海建议。</span>
+      <span class="lang-en">Tell us about your product and goals. We'll reach out within 24 hours with tailored advice.</span>
+    </p>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">
+              <span class="lang-zh-inline">位置</span><span class="lang-en-inline">Location</span>
+            </div>
+            <div class="contact-value">Los Angeles, California</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">hello@bridgemarketing.co</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">💬</div>
+          <div>
+            <div class="contact-label">WeChat / 微信</div>
+            <div class="contact-value">BridgeMarketing_US</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🌐</div>
+          <div>
+            <div class="contact-label">LinkedIn</div>
+            <div class="contact-value">linkedin.com/company/bridgemarketing</div>
+          </div>
+        </div>
+        <div style="margin-top:2rem; padding:1.5rem; background:rgba(13,148,136,0.1); border:1px solid rgba(13,148,136,0.25); border-radius:10px;">
+          <p style="font-size:0.85rem; color:var(--teal-light); font-weight:500; margin-bottom:0.5rem;">
+            <span class="lang-zh-inline">🎁 免费初次咨询</span>
+            <span class="lang-en-inline">🎁 Free First Consultation</span>
+          </p>
+          <p style="font-size:0.82rem; color:var(--muted); line-height:1.7;">
+            <span class="lang-zh">无论您是刚开始考虑出海，还是已有一定基础想加速，我们都愿意为您提供一次免费的策略咨询。</span>
+            <span class="lang-en">Whether you're just starting to think about the US market or looking to accelerate an existing effort — we offer one free strategy session.</span>
+          </p>
+        </div>
+      </div>
+
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>
+              <span class="lang-zh-inline">您的姓名 *</span>
+              <span class="lang-en-inline">Your Name *</span>
+            </label>
+            <input type="text" required placeholder="李总 / John">
+          </div>
+          <div class="form-group">
+            <label>
+              <span class="lang-zh-inline">公司名称</span>
+              <span class="lang-en-inline">Company</span>
+            </label>
+            <input type="text" placeholder="XX Manufacturing Co.">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>
+            <span class="lang-zh-inline">联系方式 (邮件/微信) *</span>
+            <span class="lang-en-inline">Contact (Email / WeChat) *</span>
+          </label>
+          <input type="text" required placeholder="email@company.com">
+        </div>
+        <div class="form-group">
+          <label>
+            <span class="lang-zh-inline">您的产品/行业</span>
+            <span class="lang-en-inline">Your Product / Industry</span>
+          </label>
+          <select>
+            <option value="">
+              -- 请选择 / Please select --
+            </option>
+            <option>电子/电器 · Electronics</option>
+            <option>机械/工业设备 · Machinery</option>
+            <option>家具/家居 · Furniture</option>
+            <option>纺织/服装 · Textile</option>
+            <option>汽配/零部件 · Auto Parts</option>
+            <option>其他 · Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>
+            <span class="lang-zh-inline">告诉我们您的出海目标</span>
+            <span class="lang-en-inline">Tell us your US market goals</span>
+          </label>
+          <textarea placeholder="例：我们是做xxx产品的工厂，想在美国找到更多B2B客户..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">
+          <span class="lang-zh-inline">发送 — 我们会在24小时内回复</span>
+          <span class="lang-en-inline">Send — We'll reply within 24 hours</span>
+        </button>
+        <div id="formMsg" style="display:none; margin-top:1rem; padding:0.85rem; background:rgba(13,148,136,0.15); border-radius:6px; font-size:0.85rem; color:var(--teal-light); text-align:center;"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Bridge<span>Marketing</span></div>
+  <div class="footer-copy">
+    <span class="lang-zh-inline">© 2025 BridgeMarketing · 中美市场营销桥梁</span>
+    <span class="lang-en-inline">© 2025 BridgeMarketing · Bridging China &amp; the US</span>
+  </div>
+  <div class="footer-links">
+    <a href="#home">
+      <span class="lang-zh-inline">首页</span><span class="lang-en-inline">Home</span>
+    </a>
+    <a href="#services">
+      <span class="lang-zh-inline">服务</span><span class="lang-en-inline">Services</span>
+    </a>
+    <a href="#contact">
+      <span class="lang-zh-inline">联系</span><span class="lang-en-inline">Contact</span>
+    </a>
+  </div>
+</footer>
+
+<script>
+// Language toggle
+const langBtn = document.getElementById('langToggle');
+let isEn = false;
+langBtn.addEventListener('click', () => {
+  isEn = !isEn;
+  document.body.classList.toggle('en', isEn);
+  langBtn.textContent = isEn ? '中文' : 'EN';
+  document.documentElement.lang = isEn ? 'en' : 'zh';
+});
+
+// Scroll nav
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Fade-up on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Form submit
+function handleSubmit(e) {
+  e.preventDefault();
+  const msg = document.getElementById('formMsg');
+  const isEn = document.body.classList.contains('en');
+  msg.style.display = 'block';
+  msg.textContent = isEn
+    ? '✓ Message sent! We\'ll be in touch within 24 hours.'
+    : '✓ 已收到您的消息！我们会在24小时内联系您。';
+  e.target.reset();
+}
+</script>
+</body>
+</html>
